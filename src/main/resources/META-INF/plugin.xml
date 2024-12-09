@@ -1,6 +1,6 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.sene4ka.searchplugin</id>
+    <id>com.github.sene4ka.searchselected</id>
     <name>search_plugin</name>
     <vendor>sene4ka</vendor>
 
@@ -9,8 +9,8 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <actions>
-        <action id="com.github.sene4ka.searchaction" class="com.github.sene4ka.searchplugin.SearchAction"
-                text="Search Action" description="Searches the selected text in Google"
+        <action id="com.github.sene4ka.searchaction" class="com.github.sene4ka.searchselected.SearchAction"
+                text="Search Selected" description="Searches the selected text in Google"
                 icon="SdkIcons.Sdk_default_icon">
             <keyboard-shortcut first-keystroke="control alt G" keymap="$default"/>
         </action>

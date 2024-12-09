@@ -1,4 +1,4 @@
-package com.github.sene4ka.searchplugin
+package com.github.sene4ka.searchselected
 
 import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.actionSystem.AnAction
