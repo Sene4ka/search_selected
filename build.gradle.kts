@@ -1,4 +1,3 @@
-import org.jetbrains.changelog.Changelog
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
@@ -53,7 +52,9 @@ dependencies {
 // Configure IntelliJ Platform Gradle Plugin - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-extension.html
 intellijPlatform {
     pluginConfiguration {
-        version = providers.gradleProperty("pluginVersion")
+        id = "s3ne4ka-search-plugin"
+        name = "Search Plugin"
+        version = "0.0.1"
 
         // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
         description = providers.fileContents(layout.projectDirectory.file("README.md")).asText.map {
@@ -65,19 +66,6 @@ intellijPlatform {
                     throw GradleException("Plugin description section not found in README.md:\n$start ... $end")
                 }
                 subList(indexOf(start) + 1, indexOf(end)).joinToString("\n").let(::markdownToHTML)
-            }
-        }
-
-        val changelog = project.changelog // local variable for configuration cache compatibility
-        // Get the latest available change notes from the changelog file
-        changeNotes = providers.gradleProperty("pluginVersion").map { pluginVersion ->
-            with(changelog) {
-                renderItem(
-                    (getOrNull(pluginVersion) ?: getUnreleased())
-                        .withHeader(false)
-                        .withEmptySections(false),
-                    Changelog.OutputType.HTML,
-                )
             }
         }
 

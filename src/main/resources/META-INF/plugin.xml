@@ -8,11 +8,11 @@
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.sene4ka.searchplugin.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.sene4ka.searchplugin.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+    <actions>
+        <action id="com.github.sene4ka.searchaction" class="com.github.sene4ka.searchplugin.SearchAction"
+                text="Search Action" description="Searches the selected text in Google"
+                icon="SdkIcons.Sdk_default_icon">
+            <keyboard-shortcut first-keystroke="control alt G" keymap="$default"/>
+        </action>
+    </actions>
 </idea-plugin>
