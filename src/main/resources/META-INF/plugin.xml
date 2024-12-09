@@ -3,6 +3,7 @@
     <id>com.github.sene4ka.searchselected</id>
     <name>search_plugin</name>
     <vendor>sene4ka</vendor>
+    <description>Searches the selected text in Google when Ctrl+Alt+G is pressed</description>
 
     <depends>com.intellij.modules.platform</depends>
 
