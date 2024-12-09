@@ -11,7 +11,7 @@ plugins {
 }
 
 group = providers.gradleProperty("pluginGroup").get()
-version = providers.gradleProperty("pluginVersion").get()
+version = "0.0.1"
 
 // Set the JVM language level used to build the project.
 kotlin {
